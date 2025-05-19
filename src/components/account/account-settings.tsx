@@ -2,6 +2,7 @@
 
 import { useGetMe } from '@/shared'
 import { useEffect, useState } from 'react'
+import { AccountForm } from './account-form'
 import { LogoutAction } from './logout-action'
 import { ProfileForm } from './profile-form'
 
@@ -25,6 +26,7 @@ export function AccountSettings() {
         <p className='text-muted-foreground text-sm'>Управление своим аккаунтом</p>
       </div>
       <ProfileForm user={user} />
+      <AccountForm user={user} />
       <LogoutAction />
     </div>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { User } from '@/shared'
+import { Avatar, AvatarFallback } from '../shared/avatar'
 import { Skeleton } from '../shared/skeleton'
 
 interface ProfileFormProps {
@@ -13,19 +14,23 @@ export function ProfileForm({ user }: ProfileFormProps) {
       <h2 className='text-lg'>Профиль</h2>
       <div className='border border-border rounded-md p-4'>
         <div className='flex flex-col gap-4'>
-          <div>
-            <h3 className='text-md font-medium'>Имя</h3>
-            {user ? (
-              <p className='text-sm text-muted-foreground'>{user.name}</p>
-            ) : (
-              <Skeleton className='h-5 w-32' />
-            )}
+          <div className='flex items-center gap-4'>
+            <Avatar className='size-14 text-2xl'>
+              <AvatarFallback>{user?.name?.charAt(0).toUpperCase()}</AvatarFallback>
+            </Avatar>
+
+            <div className='flex flex-col'>
+              <h2 className='text-lg font-medium'>Аватарка</h2>
+              <p className='text-sm text-muted-foreground'>
+                Ты можешь изменить аватарку прямо здесь
+              </p>
+            </div>
           </div>
 
           <div>
-            <h3 className='text-md font-medium'>Почта</h3>
+            <h3 className='text-md font-medium'>Твое имя</h3>
             {user ? (
-              <p className='text-sm text-muted-foreground'>{user.email}</p>
+              <p className='text-sm text-muted-foreground'>{user.name}</p>
             ) : (
               <Skeleton className='h-5 w-32' />
             )}
