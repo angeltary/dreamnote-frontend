@@ -1,20 +1,17 @@
 'use client'
 
-import { AppRoutes, useLogout } from '@/shared'
-import { useRouter } from 'next/navigation'
+import { useLogout } from '@/shared'
 import { toast } from 'sonner'
 import { Button } from '../shared/button'
 
 export function LogoutAction() {
-  const router = useRouter()
-
   const { mutate, isPending } = useLogout()
 
   const onSubmit = () => {
     mutate(undefined, {
       onSuccess: () => {
-        router.push(AppRoutes.HOME)
         toast.success('Выход из аккаунта прошел успешно')
+        // router.push(AppRoutes.HOME)
       },
       onError: (error: Error) => {
         toast.error(error.message || 'Произошла ошибка при выходе из аккаунта')
