@@ -49,8 +49,7 @@ export function RegisterForm() {
   async function onSubmit(data: RegisterFormSchema) {
     await mutate(data, {
       onSuccess: () => {
-        toast.success('Регистрация прошла успешно')
-        router.push(AppRoutes.HOME)
+        router.push(AppRoutes.EMAIL_NOTIFICATION)
       },
       onError: (error: Error) => {
         toast.error(error.message || 'Произошла ошибка при регистрации')
@@ -78,7 +77,7 @@ export function RegisterForm() {
                 <FormItem>
                   <FormLabel>Имя</FormLabel>
                   <FormControl>
-                    <Input placeholder='Artem Ivanov' disabled={isPending} {...field} />
+                    <Input placeholder='Artem Baranov' disabled={isPending} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

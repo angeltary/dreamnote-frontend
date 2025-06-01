@@ -15,9 +15,13 @@ export function ProfileForm({ user }: ProfileFormProps) {
       <div className='border border-border rounded-md p-4'>
         <div className='flex flex-col gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar className='size-14 text-2xl'>
-              <AvatarFallback>{user?.name?.charAt(0).toUpperCase()}</AvatarFallback>
-            </Avatar>
+            {user ? (
+              <Avatar className='size-14 text-2xl'>
+                <AvatarFallback>{user.name.charAt(0).toUpperCase()}</AvatarFallback>
+              </Avatar>
+            ) : (
+              <Skeleton className='size-14 rounded-full' />
+            )}
 
             <div className='flex flex-col'>
               <h2 className='text-lg font-medium'>Аватарка</h2>

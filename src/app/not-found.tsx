@@ -1,4 +1,5 @@
 import { Button } from '@/components/shared/button'
+import { AppRoutes } from '@/shared'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -16,7 +17,7 @@ export default function NotFoundPage() {
             size='lg'
             className='bg-primary hover:bg-primary/80 transition-colors text-white'
           >
-            <Link href='/'>
+            <Link href={AppRoutes.HOME}>
               На главную
               <ArrowRight className='ml-2 h-4 w-4' />
             </Link>

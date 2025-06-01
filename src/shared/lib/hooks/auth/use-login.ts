@@ -1,10 +1,10 @@
-import { AuthResponse, login, LoginRequest } from '@/shared'
+import { login, LoginRequest, LoginResponse } from '@/shared'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useLogin = () => {
   const queryClient = useQueryClient()
 
-  return useMutation<AuthResponse, Error, LoginRequest>({
+  return useMutation<LoginResponse, Error, LoginRequest>({
     mutationFn: async (data: LoginRequest) => {
       return await login(data)
     },

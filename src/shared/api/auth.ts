@@ -1,28 +1,26 @@
 import {
   ApiRoutes,
-  AuthResponse,
   instance,
   LoginRequest,
+  LoginResponse,
   LogoutResponse,
   RegisterRequest,
+  RegisterResponse,
   removeAccessToken,
   saveAccessToken,
   User,
+  VerifyEmailRequest,
 } from '@/shared'
 import { queryOptions } from '@tanstack/react-query'
 
 export const register = async (data: RegisterRequest) => {
-  const response = (await instance.post<AuthResponse>('/auth/register', data)).data
-
-  if (response.accessToken) {
-    saveAccessToken(response.accessToken)
-  }
+  const response = (await instance.post<RegisterResponse>(ApiRoutes.REGISTER, data)).data
 
   return response
 }
 
 export const login = async (data: LoginRequest) => {
-  const response = (await instance.post<AuthResponse>(ApiRoutes.LOGIN, data)).data
+  const response = (await instance.post<LoginResponse>(ApiRoutes.LOGIN, data)).data
 
   if (response.accessToken) {
     saveAccessToken(response.accessToken)
@@ -42,7 +40,7 @@ export const logout = async () => {
 }
 
 export const refresh = async () => {
-  const response = (await instance.post<AuthResponse>(ApiRoutes.REFRESH)).data
+  const response = (await instance.post<LoginResponse>(ApiRoutes.REFRESH)).data
 
   if (response.accessToken) {
     saveAccessToken(response.accessToken)
@@ -53,6 +51,12 @@ export const refresh = async () => {
 
 export const getMe = async () => {
   const response = (await instance.get<User>(ApiRoutes.ME)).data
+
+  return response
+}
+
+export const verify = async (data: VerifyEmailRequest) => {
+  const response = (await instance.post<boolean>(ApiRoutes.VERIFY, data)).data
 
   return response
 }

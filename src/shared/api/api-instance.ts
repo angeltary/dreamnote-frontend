@@ -41,7 +41,7 @@ instance.interceptors.response.use(
 
       originalRequest._retry = true
       try {
-        const response = await axios.post(`${API_URL}/auth/refresh`)
+        const response = await instance.post(ApiRoutes.REFRESH)
         const newToken = response.data.accessToken
 
         if (newToken) {

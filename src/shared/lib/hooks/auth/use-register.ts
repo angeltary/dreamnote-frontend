@@ -1,10 +1,10 @@
-import { AuthResponse, register, RegisterRequest } from '@/shared'
+import { register, RegisterRequest, RegisterResponse } from '@/shared'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useRegister = () => {
   const queryClient = useQueryClient()
 
-  return useMutation<AuthResponse, Error, RegisterRequest>({
+  return useMutation<RegisterResponse, Error, RegisterRequest>({
     mutationFn: async (data: RegisterRequest) => {
       return await register(data)
     },
