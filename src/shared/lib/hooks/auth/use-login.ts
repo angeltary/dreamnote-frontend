@@ -1,4 +1,5 @@
-import { login, LoginRequest, LoginResponse } from '@/shared'
+import { login } from '@/shared/api/auth'
+import { LoginRequest, LoginResponse } from '@/shared/types'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useLogin = () => {

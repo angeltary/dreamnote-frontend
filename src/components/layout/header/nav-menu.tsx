@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/shared/button'
+import { Button } from '@/components/ui/button'
 import { AppRoutes, useGetMe } from '@/shared'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'

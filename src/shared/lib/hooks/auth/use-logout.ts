@@ -1,4 +1,5 @@
-import { logout, LogoutResponse } from '@/shared'
+import { logout } from '@/shared/api/auth'
+import { LogoutResponse } from '@/shared/types'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useLogout = () => {

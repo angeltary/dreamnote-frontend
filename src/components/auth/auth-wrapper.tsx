@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { Logo } from '../shared/logo'
+import { Logo } from '../ui/logo'
 
 interface AuthWrapperProps {
   children: ReactNode

@@ -1,6 +1,6 @@
 'use client'
 
-import { EllipsisLoader } from '@/components/shared/ellipsis-loader'
+import { EllipsisLoader } from '@/components/ui/ellipsis-loader'
 import { useGetMe } from '@/shared'
 import { useEffect, useState, type ReactNode } from 'react'
 

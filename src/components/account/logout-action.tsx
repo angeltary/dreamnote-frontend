@@ -2,7 +2,7 @@
 
 import { useLogout } from '@/shared'
 import { toast } from 'sonner'
-import { Button } from '../shared/button'
+import { Button } from '../ui/button'
 
 export function LogoutAction() {
   const { mutate, isPending } = useLogout()
@@ -30,6 +30,7 @@ export function LogoutAction() {
               Выйти из аккаунта на этом устройстве
             </p>
           </div>
+
           <Button type='submit' onClick={onSubmit} disabled={isPending}>
             Выйти
           </Button>

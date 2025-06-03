@@ -1,4 +1,5 @@
-import { register, RegisterRequest, RegisterResponse } from '@/shared'
+import { register } from '@/shared/api/auth'
+import { RegisterRequest, RegisterResponse } from '@/shared/types'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useRegister = () => {

@@ -1,5 +1,5 @@
 import { TanstackQueryProvider } from '@/components/layout/providers/tanstack-query-provider'
-import { Toaster } from '@/components/shared/toaster'
+import { Toaster } from '@/components/ui/toaster'
 import '@/shared/styles/globals.css'
 import { Rubik } from 'next/font/google'
 

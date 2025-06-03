@@ -1,14 +1,14 @@
 'use client'
 
 import { User } from '@/shared'
-import { Avatar, AvatarFallback } from '../shared/avatar'
-import { Skeleton } from '../shared/skeleton'
+import { Avatar, AvatarFallback } from '../ui/avatar'
+import { Skeleton } from '../ui/skeleton'
 
-interface ProfileFormProps {
+interface ProfileCardProps {
   user: User | undefined
 }
 
-export function ProfileForm({ user }: ProfileFormProps) {
+export function ProfileCard({ user }: ProfileCardProps) {
   return (
     <div className='flex flex-col gap-2'>
       <h2 className='text-lg'>Профиль</h2>

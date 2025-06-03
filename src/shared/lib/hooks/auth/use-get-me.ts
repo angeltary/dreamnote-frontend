@@ -1,4 +1,5 @@
-import { getAccessToken, getMeQueryOptions } from '@/shared'
+import { getMeQueryOptions } from '@/shared/api/auth'
+import { getAccessToken } from '@/shared/lib/utils/get-access-token'
 import { useQuery } from '@tanstack/react-query'
 
 export const useGetMe = () => {

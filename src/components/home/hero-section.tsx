@@ -3,7 +3,7 @@
 import { AppRoutes } from '@/shared'
 import { Pencil } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '../shared/button'
+import { Button } from '../ui/button'
 
 export function HeroSection() {
   return (

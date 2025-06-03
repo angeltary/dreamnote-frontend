@@ -1,4 +1,4 @@
 export * from './auth'
 export * from './password'
 export * from './user'
-export * from './verify'
+export * from './verify-email'

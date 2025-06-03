@@ -1,4 +1,4 @@
-import { Button } from '@/components/shared/button'
+import { Button } from '@/components/ui/button'
 import { AppRoutes } from '@/shared'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'

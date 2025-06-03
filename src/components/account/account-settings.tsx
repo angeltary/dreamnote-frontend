@@ -2,9 +2,9 @@
 
 import { useGetMe } from '@/shared'
 import { useEffect, useState } from 'react'
-import { AccountForm } from './account-form'
+import { AccountCard } from './account-card'
 import { LogoutAction } from './logout-action'
-import { ProfileForm } from './profile-form'
+import { ProfileCard } from './profile-card'
 
 export function AccountSettings() {
   const { user } = useGetMe()
@@ -25,8 +25,8 @@ export function AccountSettings() {
         <h1 className='text-2xl'>Настройки аккаунта</h1>
         <p className='text-muted-foreground text-sm'>Управление своим аккаунтом</p>
       </div>
-      <ProfileForm user={user} />
-      <AccountForm user={user} />
+      <ProfileCard user={user} />
+      <AccountCard user={user} />
       <LogoutAction />
     </div>
   )

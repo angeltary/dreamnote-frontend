@@ -6,23 +6,16 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import { Button } from '../shared/button'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '../shared/form'
-import { Input } from '../shared/input'
+import { Button } from '../ui/button'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
+import { Input } from '../ui/input'
 import { AuthWrapper } from './auth-wrapper'
 
 const registerSchema = z.object({
   name: z
     .string()
     .min(3, { message: 'Имя должно содержать хотя бы 3 символа' })
-    .max(16, { message: 'Имя должно содержать не более 16 символов' }),
+    .max(32, { message: 'Имя должно содержать не более 32 символов' }),
   email: z.string().email({ message: 'Введи корректный адрес электронной почты' }),
   password: z
     .string()
@@ -50,6 +43,7 @@ export function RegisterForm() {
     await mutate(data, {
       onSuccess: () => {
         router.push(AppRoutes.EMAIL_NOTIFICATION)
+        toast.success('Письмо с подтверждением отправлено на почту')
       },
       onError: (error: Error) => {
         toast.error(error.message || 'Произошла ошибка при регистрации')

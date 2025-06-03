@@ -7,15 +7,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/shared/form'
-import { Input } from '@/components/shared/input'
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import { AppRoutes, useLogin } from '@/shared'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import { Button } from '../shared/button'
+import { Button } from '../ui/button'
 import { AuthWrapper } from './auth-wrapper'
 
 const loginSchema = z.object({

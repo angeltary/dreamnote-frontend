@@ -1,31 +1,31 @@
 'use client'
 
-import { EllipsisLoader } from '@/components/shared/ellipsis-loader'
-import { AppRoutes, useVerify } from '@/shared'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { EllipsisLoader } from '@/components/ui/ellipsis-loader'
+import { AppRoutes, useVerifyEmail } from '@/shared'
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { toast } from 'sonner'
 
 export function VerifyEmail() {
-  const searchParams = useSearchParams()
   const router = useRouter()
-  const code = searchParams.get('code')
-
-  const { mutate, isSuccess, isError } = useVerify()
+  const { mutate, isSuccess, isError } = useVerifyEmail()
 
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const code = urlParams.get('code')
+
     if (!code) {
       router.back()
       return
     }
 
     mutate({ code })
-  }, [code, mutate, router])
+  }, [mutate, router])
 
   useEffect(() => {
     if (isSuccess) {
       toast.success('Почта успешно подтверждена!')
-      router.push(AppRoutes.HOME)
+      router.push(AppRoutes.LOGIN)
     }
 
     if (isError) {
@@ -34,5 +34,9 @@ export function VerifyEmail() {
     }
   }, [isSuccess, isError, router])
 
-  return <EllipsisLoader />
+  return (
+    <div className='flex min-h-screen items-center justify-center'>
+      <EllipsisLoader />
+    </div>
+  )
 }

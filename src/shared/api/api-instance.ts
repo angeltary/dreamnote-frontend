@@ -1,11 +1,7 @@
-import {
-  API_URL,
-  ApiRoutes,
-  AppRoutes,
-  getAccessToken,
-  removeAccessToken,
-  saveAccessToken,
-} from '@/shared'
+import { ApiRoutes } from '@/shared/constants/api-routes'
+import { AppRoutes } from '@/shared/constants/app-routes'
+import { API_URL } from '@/shared/constants/env'
+import { getAccessToken, removeAccessToken, saveAccessToken } from '@/shared/lib/utils'
 import axios from 'axios'
 
 export const instance = axios.create({

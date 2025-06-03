@@ -1,17 +1,18 @@
+import { ApiRoutes } from '@/shared/constants/api-routes'
+import { removeAccessToken } from '@/shared/lib/utils/remove-access-token'
+import { saveAccessToken } from '@/shared/lib/utils/save-access-token'
 import {
-  ApiRoutes,
-  instance,
   LoginRequest,
   LoginResponse,
   LogoutResponse,
   RegisterRequest,
   RegisterResponse,
-  removeAccessToken,
-  saveAccessToken,
+  ResetPasswordRequest,
   User,
   VerifyEmailRequest,
-} from '@/shared'
+} from '@/shared/types'
 import { queryOptions } from '@tanstack/react-query'
+import { instance } from './api-instance'
 
 export const register = async (data: RegisterRequest) => {
   const response = (await instance.post<RegisterResponse>(ApiRoutes.REGISTER, data)).data
@@ -55,8 +56,14 @@ export const getMe = async () => {
   return response
 }
 
-export const verify = async (data: VerifyEmailRequest) => {
+export const verifyEmail = async (data: VerifyEmailRequest) => {
   const response = (await instance.post<boolean>(ApiRoutes.VERIFY, data)).data
+
+  return response
+}
+
+export const resetPassword = async (data: ResetPasswordRequest) => {
+  const response = (await instance.post<boolean>(ApiRoutes.RESET_PASSWORD, data)).data
 
   return response
 }

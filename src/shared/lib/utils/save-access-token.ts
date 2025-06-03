@@ -1,4 +1,5 @@
-import { APP_DOMAIN, StorageKeys } from '@/shared'
+import { APP_DOMAIN } from '@/shared/constants/env'
+import { StorageKeys } from '@/shared/constants/storage-keys'
 import Cookies from 'js-cookie'
 
 export const saveAccessToken = (accessToken: string) => {
