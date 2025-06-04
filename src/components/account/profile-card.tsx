@@ -31,7 +31,7 @@ export function ProfileCard({ user }: ProfileCardProps) {
             </div>
           </div>
 
-          <div>
+          <div className='flex flex-col gap-1'>
             <h3 className='text-md font-medium'>Твое имя</h3>
             {user ? (
               <p className='text-sm text-muted-foreground'>{user.name}</p>

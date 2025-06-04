@@ -23,8 +23,8 @@ export function LogoutAction() {
     <div className='flex flex-col gap-2'>
       <h2 className='text-lg'>Действия</h2>
       <div className='border border-border rounded-md p-4'>
-        <div className='flex justify-between items-center'>
-          <div>
+        <div className='flex justify-between gap-3 items-start flex-col md:flex-row md:items-center'>
+          <div className='flex flex-col gap-1'>
             <h3 className='text-md font-medium'>Выход</h3>
             <p className='text-sm text-muted-foreground'>
               Выйти из аккаунта на этом устройстве

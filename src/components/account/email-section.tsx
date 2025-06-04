@@ -16,7 +16,7 @@ export function EmailSection({ user }: EmailSectionProps) {
         <div className='mb-1 flex items-center gap-2'>
           <h2 className='font-semibold'>Почта</h2>
         </div>
-        <div className='flex flex-row gap-1 text-sm text-muted-foreground'>
+        <div className='flex flex-col md:flex-row gap-1 text-sm text-muted-foreground'>
           Твоя учетная запись привязана к адресу{' '}
           {user ? (
             <span className='font-medium text-primary'>{user?.email}</span>

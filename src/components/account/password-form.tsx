@@ -88,7 +88,7 @@ export function PasswordForm({ user }: PasswordFormProps) {
       <div className='hidden rounded-full bg-primary p-2.5 md:flex'>
         <KeyRound className='size-5 stroke-[1.7px] text-white' />
       </div>
-      <div className='flex w-full flex-row justify-between items-center'>
+      <div className='flex w-full justify-between gap-3 items-start flex-col md:flex-row md:items-center'>
         <div>
           <div className='mb-1 flex items-center gap-2'>
             <h2 className='font-semibold'>Пароль</h2>
