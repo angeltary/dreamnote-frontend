@@ -5,5 +5,6 @@ export enum ApiRoutes {
   REFRESH = '/auth/refresh',
   VERIFY = '/auth/verify',
   RESET_PASSWORD = '/auth/reset-password',
-  ME = '/user/@me',
+  ME = '/users/@me',
+  NOTES = '/notes',
 }

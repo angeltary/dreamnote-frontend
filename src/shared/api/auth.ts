@@ -8,10 +8,8 @@ import {
   RegisterRequest,
   RegisterResponse,
   ResetPasswordRequest,
-  User,
   VerifyEmailRequest,
 } from '@/shared/types'
-import { queryOptions } from '@tanstack/react-query'
 import { instance } from './api-instance'
 
 export const register = async (data: RegisterRequest) => {
@@ -50,12 +48,6 @@ export const refresh = async () => {
   return response
 }
 
-export const getMe = async () => {
-  const response = (await instance.get<User>(ApiRoutes.ME)).data
-
-  return response
-}
-
 export const verifyEmail = async (data: VerifyEmailRequest) => {
   const response = (await instance.post<boolean>(ApiRoutes.VERIFY, data)).data
 
@@ -66,13 +58,4 @@ export const resetPassword = async (data: ResetPasswordRequest) => {
   const response = (await instance.post<boolean>(ApiRoutes.RESET_PASSWORD, data)).data
 
   return response
-}
-
-export const getMeQueryOptions = () => {
-  return queryOptions({
-    queryKey: ['me'],
-    queryFn: () => getMe(),
-    refetchOnWindowFocus: false,
-    staleTime: 5 * 1000,
-  })
 }

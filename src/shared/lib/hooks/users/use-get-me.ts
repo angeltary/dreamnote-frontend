@@ -1,4 +1,4 @@
-import { getMeQueryOptions } from '@/shared/api/auth'
+import { getMeQueryOptions } from '@/shared/api/users'
 import { getAccessToken } from '@/shared/lib/utils/get-access-token'
 import { useQuery } from '@tanstack/react-query'
 

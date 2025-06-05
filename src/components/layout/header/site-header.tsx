@@ -1,7 +1,7 @@
-import { NavMenu } from '@/components/layout/header/nav-menu'
 import { AppRoutes } from '@/shared'
 import Image from 'next/image'
 import Link from 'next/link'
+import { NavMenuWrapper } from './nav-menu-wrapper'
 
 export function SiteHeader() {
   return (
@@ -13,7 +13,7 @@ export function SiteHeader() {
             Dreamnote
           </h1>
         </Link>
-        <NavMenu />
+        <NavMenuWrapper />
       </div>
     </header>
   )

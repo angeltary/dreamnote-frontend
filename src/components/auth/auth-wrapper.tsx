@@ -15,7 +15,7 @@ interface AuthWrapperProps {
 
 export function AuthWrapper({ children, title, description, link }: AuthWrapperProps) {
   return (
-    <div className='container relative flex min-h-svh w-full flex-col items-center justify-center lg:grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
+    <div className='container relative flex min-h-svh w-full flex-col items-center justify-center lg:grid lg:max-w-none lg:grid-cols-2 lg:px-0 px-4'>
       <div className='relative hidden h-full flex-col p-10 text-primary lg:flex'>
         <div className='absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70'></div>
       </div>

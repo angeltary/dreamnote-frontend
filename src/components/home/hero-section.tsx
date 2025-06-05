@@ -21,7 +21,7 @@ export function HeroSection() {
       </div>
       <div className='flex gap-4'>
         <Button size='lg' className='rounded-full' asChild>
-          <Link href={AppRoutes.HOME}>
+          <Link href={AppRoutes.NOTES}>
             <Pencil />
             Начать вести заметки
           </Link>

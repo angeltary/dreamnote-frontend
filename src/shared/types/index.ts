@@ -1,4 +1,5 @@
 export * from './auth'
+export * from './notes'
 export * from './password'
-export * from './user'
+export * from './users'
 export * from './verify-email'
